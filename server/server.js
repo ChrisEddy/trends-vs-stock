@@ -6,7 +6,7 @@ const cors = require('cors');
 
 const app = express();
 app.use(cors());
-app.get('/*', express.static(path.join(__dirname, '../..', 'build')));
+app.get('/*', express.static(path.join(__dirname, '../', 'build')));
 
 const googleTrends = require('google-trends-api');
 
