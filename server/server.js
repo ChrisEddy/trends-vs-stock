@@ -14,11 +14,10 @@ app.post('/trend', bodyParser.json(), async (req, res) =>{
     if(req.body.query){
         googleTrends.interestOverTime({keyword: req.body.query, startTime: new Date(new Date().setFullYear(new Date().getFullYear() - 1))})
         .then(function(results){
-          console.log('These results are awesome', results);
           res.json({'result': JSON.parse(results)});
         })
         .catch(function(err){
-          console.error('Oh no there was an error', err);
+          console.error('ERROR:', err);
           res.json({'result': err});
         });
     }
@@ -27,4 +26,4 @@ app.post('/trend', bodyParser.json(), async (req, res) =>{
     }
 });
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.listen(port, () => console.log(`Listening on port ${port}!`));
