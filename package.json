@@ -16,6 +16,7 @@
     "react-scripts": "2.1.1"
   },
   "scripts": {
+    "frontend": "react-scripts start",
     "start": "node server/server.js",
     "dev": "concurrently \"react-scripts start\" \"node server/server.js\"",
     "build": "react-scripts build",
